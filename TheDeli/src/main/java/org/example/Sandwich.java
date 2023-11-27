@@ -1,95 +1,126 @@
 package org.example;
 
+import java.util.List;
+
 public class Sandwich {
+    private Bread_Size breadSize;
+    private Bread bread;
+    private Meat meat;
+    private boolean hasExtraMeat;
+    private Cheese cheese;
+    private boolean hasExtraCheese;
+    private List<Regular_Topping> regularTopping;
+    private List<Sauce> sauce;
+    private boolean toasted;
+    private Side side;
+    private double breadSizePrice;
+    private double extraMeatPrice;
+    private double extraCheesePrice;
+    private double basePrice;
 
-    private Bread breadType;
-    private RegularTopping regularTopping;
-    private Meat meatType;
-    private Cheese cheeseType;
-    private Sauce sauceType;
-    private boolean isToasted;
-    private final Side sideType;
-    private BreadLength breadLength;
-    private double price;
-
-    public Sandwich(Bread breadType, RegularTopping regularTopping, Meat meatType, Cheese cheeseType, Sauce sauceType, boolean isToasted, Side sideType, BreadLength breadLength, double price) {
-        this.breadType = breadType;
+    public Sandwich(Bread_Size breadSize, Bread bread, Meat meat, boolean hasExtraMeat, Cheese cheese, boolean hasExtraCheese, List<Regular_Topping> regularTopping, List<Sauce> sauce, boolean toasted, Side side, double breadSizePrice, double extraMeatPrice, double extraCheesePrice, double basePrice) {
+        this.breadSize = breadSize;
+        this.bread = bread;
+        this.meat = meat;
+        this.hasExtraMeat = hasExtraMeat;
+        this.cheese = cheese;
+        this.hasExtraCheese = hasExtraCheese;
         this.regularTopping = regularTopping;
-        this.meatType = meatType;
-        this.cheeseType = cheeseType;
-        this.sauceType = sauceType;
-        this.isToasted = isToasted;
-        this.sideType = sideType;
-        this.breadLength = breadLength;
-        this.price = price;
+        this.sauce = sauce;
+        this.toasted = toasted;
+        this.side = side;
+        this.breadSizePrice = breadSizePrice;
+        this.extraMeatPrice = extraMeatPrice;
+        this.extraCheesePrice = extraCheesePrice;
+        this.basePrice = basePrice;
     }
 
-    public Bread getBreadType() {
-        return breadType;
+    public Sandwich() {
+
     }
 
-    public void setBreadType(Bread breadType) {
-        this.breadType = breadType;
+
+    public void setBreadSize(Bread_Size breadSize) {
+        this.breadSize = breadSize;
     }
 
-    public RegularTopping getRegularTopping() {
+    public double getBreadSizePrice() {
+        return breadSizePrice;
+    }
+
+    public void setBreadSizePrice(double breadSizePrice) {
+        this.breadSizePrice = breadSizePrice;
+    }
+
+    public double getExtraMeatPrice() {
+        return extraMeatPrice;
+    }
+
+    public void setExtraMeatPrice(double extraMeatPrice) {
+        this.extraMeatPrice = extraMeatPrice;
+    }
+
+    public double getExtraCheesePrice() {
+        return extraCheesePrice;
+    }
+
+    public void setExtraCheesePrice(double extraCheesePrice) {
+        this.extraCheesePrice = extraCheesePrice;
+    }
+
+    public Bread_Size getBreadSize() {
+        return breadSize;
+    }
+
+    public Bread getBread() {
+        return bread;
+    }
+
+    public Meat getMeat() {
+        return meat;
+    }
+
+    public boolean isHasExtraMeat() {
+        return hasExtraMeat;
+    }
+
+    public Cheese getCheese() {
+        return cheese;
+    }
+
+    public boolean isHadExtraCheese() {
+        return hasExtraCheese;
+    }
+
+    public List<Regular_Topping> getRegularTopping() {
         return regularTopping;
     }
 
-    public void setRegularTopping(RegularTopping regularTopping) {
-        this.regularTopping = regularTopping;
-    }
-
-    public Meat getMeatType() {
-        return meatType;
-    }
-
-    public void setMeatType(Meat meatType) {
-        this.meatType = meatType;
-    }
-
-    public Cheese getCheeseType() {
-        return cheeseType;
-    }
-
-    public void setCheeseType(Cheese cheeseType) {
-        this.cheeseType = cheeseType;
-    }
-
-    public Sauce getSauceType() {
-        return sauceType;
-    }
-
-    public void setSauceType(Sauce sauceType) {
-        this.sauceType = sauceType;
+    public List<Sauce> getSauce() {
+        return sauce;
     }
 
     public boolean isToasted() {
-        return isToasted;
+        return toasted;
     }
 
-    public void setToasted(boolean toeasted) {
-        isToasted = toeasted;
+    public Side getSide() {
+        return side;
     }
 
-    public Side getSideType() {
-        return sideType;
+    public double getBasePrice() {
+        return basePrice;
     }
 
-    public BreadLength getBreadLength() {
-        return breadLength;
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
     }
-
-    public void setBreadLength(BreadLength breadLength) {
-        this.breadLength = breadLength;
+    public double calculateTotalPrice(){
+        double total = basePrice;
+        return total;
     }
-
     @Override
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public String toString(){
+        return String.format("Bread: %s\nBreadSize: %s price: %.2f\nMeat: %s\nExtraMeat: %s price: %.2f\nCheese: %s\nExtraCheese: %s price: %.2f\nRegularTopping: %s\nSauce: %s\nSide: %s\nisToasted: %s\nTotalSandwichPrice: %.2f\n******************************************\n",bread,breadSize,breadSizePrice,meat,hasExtraMeat,extraMeatPrice,cheese,hasExtraCheese,extraCheesePrice,regularTopping,sauce,side,toasted,getBasePrice());
     }
 }
