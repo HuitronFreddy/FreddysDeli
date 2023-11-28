@@ -15,9 +15,9 @@ public class SandwichBuilder implements Builder{
     private List<Sauce> sauce;
     private boolean toasted;
     private Side side;
-    private double breadSizePrice = 0.0;
-    private double extraMeatPrice = 0.00;
-    private double extraCheesePrice = 0.0;
+    private double breadSizePrice;
+    private double extraMeatPrice;
+    private double extraCheesePrice;
     @Override
     public void setBreadType(Bread bread) {
         this.bread = bread;
@@ -32,6 +32,7 @@ public class SandwichBuilder implements Builder{
 
     @Override
     public void setBreadSize(Bread_Size breadSize) {
+        breadSizePrice = 0;
         this.breadSize = breadSize;
         switch (breadSize){
             case FOUR_INCH:
@@ -76,6 +77,7 @@ public class SandwichBuilder implements Builder{
     @Override
     public void extraMeat(boolean hasExtraMeat, Bread_Size breadSize, int numberOfExtraMeat) {
         this.hasExtraMeat = hasExtraMeat;
+        extraMeatPrice = 0;
         this.breadSize = breadSize;
         if (hasExtraMeat&& numberOfExtraMeat>0){
             switch (breadSize){
@@ -99,6 +101,7 @@ public class SandwichBuilder implements Builder{
     @Override
     public void extraCheese(boolean hasExtraCheese, Bread_Size breadSize, int numberOfExtraCheese) {
         this.hasExtraCheese = hasExtraCheese;
+        extraCheesePrice = 0;
         this.breadSize = breadSize;
         if (hasExtraCheese && numberOfExtraCheese >0){
             switch (breadSize){
