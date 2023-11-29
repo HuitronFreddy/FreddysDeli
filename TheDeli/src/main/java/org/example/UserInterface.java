@@ -202,12 +202,16 @@ public class UserInterface {
                 int userInputBread = scanner.nextInt();
                 switch (userInputBread) {
                     case 1:
+                        System.out.println("Selected Bread: "+Bread.WHITE);
                         return Bread.WHITE;
                     case 2:
+                        System.out.println("Selected Bread: "+Bread.WHEAT);
                         return Bread.WHEAT;
                     case 3:
+                        System.out.println("Selected Bread: "+Bread.RYE);
                         return Bread.RYE;
                     case 4:
+                        System.out.println("Selected Bread: "+Bread.WRAP);
                         return Bread.WRAP;
                     case 0:
                         System.out.println("you are going back");
@@ -236,10 +240,13 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Selected Size: "+Bread_Size.FOUR_INCH);
                         return Bread_Size.FOUR_INCH;
                     case 2:
+                        System.out.println("Selected Size: "+Bread_Size.EIGHT_INCH);
                         return Bread_Size.EIGHT_INCH;
                     case 3:
+                        System.out.println("Selected Size: "+Bread_Size.TWELVE_INCH);
                         return Bread_Size.TWELVE_INCH;
                     case 0:
                         System.out.println("You are going back");
@@ -268,16 +275,22 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Meat added: "+Meat.STEAK);
                         return Meat.STEAK;
                     case 2:
+                        System.out.println("Meat added: "+Meat.HAM);
                         return Meat.HAM;
                     case 3:
+                        System.out.println("Meat added: "+Meat.SALAMI);
                         return Meat.SALAMI;
                     case 4:
+                        System.out.println("Meat added: "+Meat.ROAST_BEEF);
                         return Meat.ROAST_BEEF;
                     case 5:
+                        System.out.println("Meat added: "+Meat.CHICKEN);
                         return Meat.CHICKEN;
                     case 6:
+                        System.out.println("Meat added: "+Meat.BACON);
                         return Meat.BACON;
                     case 0:
                         orderScreen();
@@ -375,12 +388,16 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Selected Cheese: "+Cheese.AMERICAN);
                         return Cheese.AMERICAN;
                     case 2:
+                        System.out.println("Selected Cheese: "+Cheese.PROVOLONE);
                         return Cheese.PROVOLONE;
                     case 3:
+                        System.out.println("Selected Cheese: "+Cheese.CHEDDAR);
                         return Cheese.CHEDDAR;
                     case 4:
+                        System.out.println("Selected Cheese: "+Cheese.SWISS);
                         return Cheese.SWISS;
                     case 0:
                         System.out.println("You are going back to the order screen");
@@ -582,8 +599,10 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Side Added: "+Side.AU_JUS);
                         return Side.AU_JUS;
                     case 2:
+                        System.out.println("Side Added: "+Side.SAUCE);
                         return Side.SAUCE;
                     case 0:
                         System.out.println("No sides were included");
@@ -607,8 +626,10 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Toasted");
                         return true;
                     case 2:
+                        System.out.println("Not Toasted");
                         return false;
                     default:
                         System.out.println("Enter the correct input");
