@@ -121,6 +121,7 @@ public class Sandwich {
     }
     @Override
     public String toString(){
-        return String.format("Bread: %s\nBreadSize: %s price: %.2f\nMeat: %s\nExtraMeat: %s price: %.2f\nCheese: %s\nExtraCheese: %s price: %.2f\nRegularTopping: %s\nSauce: %s\nSide: %s\nisToasted: %s\nTotalSandwichPrice: %.2f\n******************************************\n",bread,breadSize,breadSizePrice,meat,hasExtraMeat,extraMeatPrice,cheese,hasExtraCheese,extraCheesePrice,regularTopping,sauce,side,toasted,getBasePrice());
+        return String.format("Bread: %s\nBreadSize: %s price: %.2f\nMeat: %s\nExtraMeat: %s price: %.2f\nCheese: %s\nExtraCheese: %s price: %.2f\nRegularTopping: %s\nSauce: %s\nSide: %s\nisToasted: %s\nTotalSandwichPrice: %.2f\n******************************************\n"
+                ,bread,breadSize,breadSizePrice,meat,hasExtraMeat,extraMeatPrice,cheese,hasExtraCheese,extraCheesePrice,regularTopping,sauce,side,toasted,getBasePrice());
     }
 }
