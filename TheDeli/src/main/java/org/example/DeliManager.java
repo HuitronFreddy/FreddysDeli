@@ -1,5 +1,5 @@
 package org.example;
-
+//Freddy
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class DeliManager {
             FileWriter fileWriter = new FileWriter(file);
 
             if(!fileExists || file.length() == 0){
-                fileWriter.write("Welcome to Freedy's Deli\n");
+                fileWriter.write("Welcome to Freddy's Deli\n");
             }
             for(Sandwich sandwich: sandwichList){
                 String s = String.format("Bread: %s\nBreadSize: %s price: %.2f\nMeat: %s\nExtraMeat: %s price: %.2f\nCheese: %s\nExtraCheese: %s price: %.2f\nRegularTopping: %s\nSauce: %s\nSide: %s\nisToasted: %s\nTotalSandwichPrice: %.2f\n*****************************************************************************\n",sandwich.getBread(),sandwich.getBreadSize(),sandwich.getBreadSizePrice(),sandwich.getMeat(),sandwich.isHasExtraMeat(),sandwich.getExtraMeatPrice(),sandwich.getCheese(),sandwich.isHadExtraCheese(),sandwich.getExtraCheesePrice(),sandwich.getRegularTopping(),sandwich.getSauce(),sandwich.getSide(),sandwich.isToasted(),sandwich.getBasePrice() );
