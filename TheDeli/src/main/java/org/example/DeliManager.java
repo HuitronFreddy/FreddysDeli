@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+//signature and deli Manager Freddy builder design pattern
+//supriya formula for extra meat classes you created
+//Sara enum, interface the checkout formula
+//ill just run the program and talk about user interface
 
 public class DeliManager {
 
