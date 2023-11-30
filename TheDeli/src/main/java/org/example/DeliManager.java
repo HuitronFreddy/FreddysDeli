@@ -33,7 +33,8 @@ public class DeliManager {
                 fileWriter.write(s);
             }
             double total = sandwichList.stream().mapToDouble(Sandwich::getBasePrice).sum()+drinkList.stream().mapToDouble(Drink::getPrice).sum()+chipList.stream().mapToDouble(Chip::getChipPrice).sum();
-            String s = String.format("Total Sandwich price: %.2f\nTotal Drink price: %.2f\nTotal Chips Price: %.2f\nCheckout total: %.2f\n",sandwichList.stream().mapToDouble(Sandwich::getBasePrice).sum(),drinkList.stream().mapToDouble(Drink::getPrice).sum(),chipList.stream().mapToDouble(Chip::getChipPrice).sum(),total);
+            String s = String.format("Total Sandwich price: %.2f\nTotal Drink price: %.2f\nTotal Chips Price: %.2f\nCheckout total: %.2f\n",sandwichList.stream().mapToDouble(Sandwich::getBasePrice).sum()
+                    ,drinkList.stream().mapToDouble(Drink::getPrice).sum(),chipList.stream().mapToDouble(Chip::getChipPrice).sum(),total);
             fileWriter.write(s);
             fileWriter.close();
 
