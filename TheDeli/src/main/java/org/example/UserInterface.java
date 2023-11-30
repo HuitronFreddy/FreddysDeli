@@ -101,6 +101,8 @@ public class UserInterface {
         sandwiches.add(sandwichBuilder.buildSandwich());
         System.out.println("Added");
         sandwiches.forEach(System.out::println);
+        extraMeats.clear();
+        extraCheese.clear();
 
 
     }
@@ -685,6 +687,10 @@ public class UserInterface {
                     case 1:
                         System.out.println("BlT added");
                         Signature.buildBLT(sandwichBuilder);
+                        extraMeats.clear();
+                        extraCheese.clear();
+                        sandwichBuilder.extraMeat(false,Bread_Size.EIGHT_INCH,extraMeatSelectionSize());
+                        sandwichBuilder.extraCheese(false,Bread_Size.EIGHT_INCH,extraCheeseSize());
                         changeToppingInSignatureSandwich();
                         sandwiches.add(sandwichBuilder.buildSandwich());
                         System.out.println("Signature Sandwich Blt added");
@@ -693,7 +699,12 @@ public class UserInterface {
 
                         break;
                     case 2:
+                        System.out.println("Philly cheese steak added");
                         Signature.buildPhillyCheeseSteak(sandwichBuilder);
+                        extraMeats.clear();
+                        extraCheese.clear();
+                        sandwichBuilder.extraMeat(false,Bread_Size.EIGHT_INCH,extraMeatSelectionSize());
+                        sandwichBuilder.extraCheese(false,Bread_Size.EIGHT_INCH,extraCheeseSize());
                         changeToppingInSignatureSandwich();
                         sandwiches.add(sandwichBuilder.buildSandwich());
                         System.out.println("Signature Sandwich Philly cheese steak added");

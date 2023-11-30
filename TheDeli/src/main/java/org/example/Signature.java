@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Signature {
-    Scanner scanner = new Scanner(System.in);
     public static void buildBLT(Builder builder){
         builder.setBreadSize(Bread_Size.EIGHT_INCH);
         builder.setBreadType(Bread.WHITE);
