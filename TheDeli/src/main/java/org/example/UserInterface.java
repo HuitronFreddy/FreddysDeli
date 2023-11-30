@@ -42,10 +42,11 @@ public class UserInterface {
     private void printOrderScreen(){
         System.out.println("Chose the following options");
         System.out.println("1) Add Sandwich");
-        System.out.println("2) Add Drink");
-        System.out.println("3) Add Chips");
-        System.out.println("4) Checkout");
-        System.out.println("5) Go back to home screen");
+        System.out.println("2) Add Signature Sandwich");
+        System.out.println("3) Add Drink");
+        System.out.println("4) Add Chips");
+        System.out.println("5) Checkout");
+        System.out.println("6) Go back to home screen");
         System.out.println("0) Cancel Order");
     }
     private void orderScreen(){
@@ -58,15 +59,18 @@ public class UserInterface {
                         addSandwich();
                         break;
                     case 2:
-                        addDrink();
+                        selectSignatureSandwich();
                         break;
                     case 3:
-                        addChip();
+                        addDrink();
                         break;
                     case 4:
-                        checkOut();
+                        addChip();
                         break;
                     case 5:
+                        checkOut();
+                        break;
+                    case 6:
                         System.out.println("You are going back to the home screen");
                         homeScreen();
                         break;
@@ -202,12 +206,16 @@ public class UserInterface {
                 int userInputBread = scanner.nextInt();
                 switch (userInputBread) {
                     case 1:
+                        System.out.println("Selected Bread: "+Bread.WHITE);
                         return Bread.WHITE;
                     case 2:
+                        System.out.println("Selected Bread: "+Bread.WHEAT);
                         return Bread.WHEAT;
                     case 3:
+                        System.out.println("Selected Bread: "+Bread.RYE);
                         return Bread.RYE;
                     case 4:
+                        System.out.println("Selected Bread: "+Bread.WRAP);
                         return Bread.WRAP;
                     case 0:
                         System.out.println("you are going back");
@@ -236,10 +244,13 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Selected Size: "+Bread_Size.FOUR_INCH);
                         return Bread_Size.FOUR_INCH;
                     case 2:
+                        System.out.println("Selected Size: "+Bread_Size.EIGHT_INCH);
                         return Bread_Size.EIGHT_INCH;
                     case 3:
+                        System.out.println("Selected Size: "+Bread_Size.TWELVE_INCH);
                         return Bread_Size.TWELVE_INCH;
                     case 0:
                         System.out.println("You are going back");
@@ -268,16 +279,22 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Meat added: "+Meat.STEAK);
                         return Meat.STEAK;
                     case 2:
+                        System.out.println("Meat added: "+Meat.HAM);
                         return Meat.HAM;
                     case 3:
+                        System.out.println("Meat added: "+Meat.SALAMI);
                         return Meat.SALAMI;
                     case 4:
+                        System.out.println("Meat added: "+Meat.ROAST_BEEF);
                         return Meat.ROAST_BEEF;
                     case 5:
+                        System.out.println("Meat added: "+Meat.CHICKEN);
                         return Meat.CHICKEN;
                     case 6:
+                        System.out.println("Meat added: "+Meat.BACON);
                         return Meat.BACON;
                     case 0:
                         orderScreen();
@@ -375,12 +392,16 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Selected Cheese: "+Cheese.AMERICAN);
                         return Cheese.AMERICAN;
                     case 2:
+                        System.out.println("Selected Cheese: "+Cheese.PROVOLONE);
                         return Cheese.PROVOLONE;
                     case 3:
+                        System.out.println("Selected Cheese: "+Cheese.CHEDDAR);
                         return Cheese.CHEDDAR;
                     case 4:
+                        System.out.println("Selected Cheese: "+Cheese.SWISS);
                         return Cheese.SWISS;
                     case 0:
                         System.out.println("You are going back to the order screen");
@@ -582,8 +603,10 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Side Added: "+Side.AU_JUS);
                         return Side.AU_JUS;
                     case 2:
+                        System.out.println("Side Added: "+Side.SAUCE);
                         return Side.SAUCE;
                     case 0:
                         System.out.println("No sides were included");
@@ -607,8 +630,10 @@ public class UserInterface {
                 int userInput = scanner.nextInt();
                 switch (userInput) {
                     case 1:
+                        System.out.println("Toasted");
                         return true;
                     case 2:
+                        System.out.println("Not Toasted");
                         return false;
                     default:
                         System.out.println("Enter the correct input");
@@ -649,5 +674,114 @@ public class UserInterface {
         }
 
     }
+    public void selectSignatureSandwich(){
+        while (true) {
+            try {
+                System.out.println("Select your signature sandwich");
+                System.out.println("1) BLT\n2) PhillyCheeseSteak\n0) Go Back");
+                int userInput = scanner.nextInt();
 
+                switch (userInput) {
+                    case 1:
+                        System.out.println("BlT added");
+                        Signature.buildBLT(sandwichBuilder);
+                        changeToppingInSignatureSandwich();
+                        sandwiches.add(sandwichBuilder.buildSandwich());
+                        System.out.println("Signature Sandwich Blt added");
+                        sandwiches.forEach(System.out::println);
+                        orderScreen();
+
+                        break;
+                    case 2:
+                        Signature.buildPhillyCheeseSteak(sandwichBuilder);
+                        changeToppingInSignatureSandwich();
+                        sandwiches.add(sandwichBuilder.buildSandwich());
+                        System.out.println("Signature Sandwich Philly cheese steak added");
+                        sandwiches.forEach(System.out::println);
+                        orderScreen();
+                        break;
+                    case 0:
+                        return;
+                    default:
+                        System.out.println("Enter the correct input");
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("invalid input format");
+                scanner.nextLine();
+            }
+        }
+    }
+    public void changeToppingInSignatureSandwich(){
+        boolean continueToppingChange = true;
+        while(continueToppingChange) {
+            try {
+                System.out.println("Do you want to change the topping\n1) Yes\n2) No");
+                int userInput = scanner.nextInt();
+                switch (userInput) {
+                    case 1:
+                        newToppingOptions();
+                        break;
+                    case 2:
+                        continueToppingChange = false;
+                        break;
+                    default:
+                        System.out.println("Enter the correct input");
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("Invalid input format");
+                scanner.nextLine();
+            }
+        }
+    }
+    public void newToppingOptions(){
+        boolean continueToppingChange = true;
+        while(continueToppingChange) {
+            try {
+                System.out.println("Chose from the following options");
+                System.out.println("1) Change Meat\n2) Change Cheese\n3) Change Regular Toppings\n4) Change sauces\n5) Add extra meat\n6) Add extra cheese\n7) No Meat\n8) No cheese\n0) If you are done adding toppings");
+                int userInput = scanner.nextInt();
+                switch (userInput) {
+                    case 1:
+                        sandwichBuilder.setMeatType(selectMeat());
+                        break;
+                    case 2:
+                        sandwichBuilder.setCheeseType(selectCheese());
+                        break;
+                    case 3:
+                        sandwichBuilder.setRegularTopping(selectRegularToppings());
+                        break;
+                    case 4:
+                        sandwichBuilder.setSaucesType(selectSauce());
+                        break;
+                    case 5:
+                        sandwichBuilder.extraMeat(hasExtraMeat(), Bread_Size.EIGHT_INCH, extraMeatSelectionSize());
+                        break;
+                    case 6:
+                        sandwichBuilder.extraCheese(hasExtraCheese(), Bread_Size.EIGHT_INCH, extraCheeseSize());
+                        break;
+                    case 7:
+                        sandwichBuilder.setMeatType(null);
+                        System.out.println("No meat has been added");
+                        break;
+                    case 8:
+                        sandwichBuilder.setCheeseType(null);
+                        System.out.println("No cheese has been added");
+                    case 0:
+                        continueToppingChange = false;
+                        break;
+                    default:
+                        System.out.println("Enter the correct input");
+                        break;
+                }
+            }
+            catch (InputMismatchException exception){
+                System.out.println("Invalid input format");
+                scanner.nextLine();
+            }
+        }
+    }
 }
