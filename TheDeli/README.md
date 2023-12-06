@@ -1,29 +1,29 @@
-**WELCOME**
-===
+# Welcome to Freddy's Deli 🥪
 
-Thank you for viewing our project! Our team members include Bimal Shrestha, Freddy Huitron, Sara Johnson and Supriya Roberson.
-This project is a custom sandwich deli we named **Freddy's Deli**!
+Thank you for exploring our custom sandwich deli project! Meet our talented team members: Bimal Shrestha, Freddy Huitron, Sara Johnson, and Supriya Roberson.
 
-This deli can allow the customer to fully customize their sandwich orders. 
-Our application takes advantage of Object-Oriented Analysis and Design. We created multiple classes, enums and interfaces to get this completed.
-Using these methods as well as a [Builder](https://refactoring.guru/design-patterns/builder/java/example) design pattern helped keep this project organized. 
+### Project Overview
 
-As new junior developers we also included practices learned in our bootcamp such as arrays, list, streams, file writer etc. As you look through our code, you can see this present. 
+Freddy's Deli is an innovative sandwich ordering application that empowers customers to personalize their sandwich experiences. Leveraging Object-Oriented Analysis and Design principles, we've implemented a robust system with multiple classes, enums, and interfaces, ensuring a seamless and organized project structure. The use of the [Builder design pattern](https://refactoring.guru/design-patterns/builder/java/example) has greatly contributed to maintaining code clarity.
 
-Getting started was a little difficult for our team as we had to think outside of the box. We created pseudo code and attempted to create UML diagrams to organize better. Doing so, we were able to successfully delegate what needed to be done by each person.
+### Technologies and Practices
 
-Our team had to fulfill a few mandatory requirements. Please see below: 
+As junior developers, we've incorporated fundamental practices learned during our bootcamp, such as working with arrays, lists, streams, and file writers. These elements are evident throughout our codebase, reflecting our commitment to applying practical knowledge in real-world scenarios.
+
+### Getting Started
+
+Starting this project presented challenges that required us to think creatively. We employed pseudocode and UML diagrams to streamline our thought process and successfully distributed tasks among team members. Our mandatory requirements included:
 
 - Various Sandwich Sizes (4", 8", 12")
 - Multiple Bread Types
-- Regular Toppings
-- Premium Toppings
-- Adding Extra Toppings Functionality
-- Print Receipt (yyyyMMdd-hhmmss.txt format)
-- Include Sides, Chips, & Drinks
+- Regular and Premium Toppings
+- Additional Toppings Functionality
+- Receipt Generation (yyyyMMdd-hhmmss.txt format)
+- Inclusion of Sides, Chips, & Drinks
 
+### User Interaction Screens
 
-As a team, we decided that a specific class would handle the user interaction when ran. These screens include:
+To enhance user experience, we designed specific screens:
 
 - Home Screen
 - Order Screen
@@ -32,12 +32,16 @@ As a team, we decided that a specific class would handle the user interaction wh
 - Add Chips
 - Check Out
 
-Breaking down the project further, you will see the builder classes that aid the Sandwich, Drink  and Deli classes. (_There are a few more that aren't listed_) 
-In these classes, you can see that we called our enums to help with the calculations needed for the ordering process. 
+### Project Structure
 
-We also decided to take on the challenge to include signature sandwiches that can be customized as well.
-This includes a BLT and Philly Cheese Steak.
+Diving deeper into the project, you'll find builder classes supporting Sandwich, Drink, and Deli functionality (and a few more not explicitly listed). We've utilized enums within these classes to facilitate calculations during the ordering process.
 
-Again, we appreciate you taking the time to view our project! 
+### Signature Sandwiches
 
-_If you would like to take a look at our presentation, you can view here:_ [[Presentation](https://docs.google.com/presentation/d/1gDbJw5tw72RGPNqXvlJA4IqWY-a_lNjbtwMuBo-ublQ/edit?usp=sharing)] 
+As a delightful challenge, we incorporated signature sandwiches like BLT and Philly Cheese Steak, allowing customers to customize them to their liking.
+
+### Project Presentation
+
+If you're interested in a more visual overview, check out our presentation [here](https://docs.google.com/presentation/d/1gDbJw5tw72RGPNqXvlJA4IqWY-a_lNjbtwMuBo-ublQ/edit?usp=sharing).
+
+Thank you once again for your time and interest in our project. We welcome any feedback and hope you enjoy exploring Freddy's Deli! 🌯🥤
